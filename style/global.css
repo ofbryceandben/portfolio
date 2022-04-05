@@ -1,0 +1,1025 @@
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+ Media Queries
+ ============================ */
+/**
+*
+* Testing
+*
+**/
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+ Header/Nav
+ ============================ */
+.header {
+  height: 50px;
+  display: flex;
+  padding: 5px 10px;
+  justify-content: space-between;
+  background-color: #494c3b;
+  position: relative;
+}
+.header .logo {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: -50px;
+  left: 3vw;
+  background-image: url(../img/logo/logo.svg);
+  background-repeat: no-repeat;
+}
+.header .gnTrig {
+  height: 100%;
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 2vw;
+}
+.header .gnTrig .burger {
+  position: relative;
+  height: 5px;
+  width: 100%;
+  background-color: #090909;
+  align-self: center;
+  justify-content: end;
+}
+.header .gnTrig .burger::after, .header .gnTrig .burger::before {
+  content: "";
+  position: absolute;
+  background-color: #090909;
+  height: 5px;
+  width: 125%;
+  right: 0;
+}
+.header .gnTrig .burger::before {
+  top: 15px;
+}
+.header .gnTrig .burger::after {
+  bottom: 15px;
+}
+.header nav {
+  flex-basis: 90%;
+}
+.header nav ul {
+  position: relative;
+  padding-right: 1vw;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #f3f3f3;
+  font-weight: 700;
+}
+.header nav ul :nth-child(2),
+.header nav ul :nth-child(3) {
+  margin-left: 20px;
+}
+.header nav ul li a {
+  padding: 10px 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .header nav ul {
+    padding-right: 4vw;
+  }
+}
+
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+    Mixins
+============================ */
+/*=============================
+  Typography
+  ============================ */
+.body {
+  font-size: clamp(16px, 3vw, 22px);
+}
+.body a {
+  text-decoration: none;
+  color: inherit;
+}
+.body .head {
+  font-weight: 300;
+  font-size: clamp(1rem, 15vw, 2rem);
+}
+.body .head strong {
+  font-size: clamp(1.1rem, 10vw, 2.25rem);
+}
+.body .head em {
+  font-size: clamp(3rem, 20vw, 9rem);
+}
+.body strong {
+  font-weight: 700;
+}
+.body em {
+  font-weight: 700;
+  font-style: italic;
+}
+.body .link {
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+.body .name {
+  position: relative;
+  display: block;
+  width: max-content;
+}
+.body .name::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background-color: #fdc720;
+  z-index: -1;
+}
+
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+  Home Banner Section
+  ============================ */
+.bnr {
+  height: 100vh;
+  grid-template-areas: ". . . . . ." "txt txt txt txt txt txt" "arrow . me me me me " "arrow . me me me me" ". . . . . .";
+}
+@media (min-width: 426px) {
+  .bnr {
+    grid-template-areas: ". . . . . ." "txt txt txt txt txt txt" ". arrow .  me me ." ". arrow .  me me ." ". . . . . .";
+  }
+}
+@media (min-width: 560px) {
+  .bnr {
+    grid-template-areas: ". . . . . ." "txt txt txt txt txt txt" ". arrow .  me me ." ". arrow .  me me ." ". . . . . .";
+  }
+}
+@media (min-width: 769px) {
+  .bnr {
+    grid-template-areas: ". . . . . ." "txt txt txt . . . " "txt txt txt me me .  " ". arrow .  me me ." ". . . . . .";
+  }
+}
+.bnr .bnrText {
+  display: grid;
+  min-height: 260px;
+  max-width: 350px;
+  align-self: start;
+  justify-self: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr repeat(2, 0.45fr);
+  grid-template-areas: "head head" "para para" "icon icon";
+  grid-area: txt;
+  z-index: 2;
+}
+@media (min-width: 769px) {
+  .bnr .bnrText {
+    margin-left: 5vw;
+  }
+}
+@media (min-width: 999px) {
+  .bnr .bnrText {
+    margin-left: 10vw;
+  }
+}
+.bnr .bnrText .head {
+  grid-area: head;
+}
+.bnr .bnrText .head em {
+  position: relative;
+  left: -500px;
+  color: #fdc720;
+  transform: skewX(10deg);
+  opacity: 0;
+}
+.bnr .bnrText .head em.switch {
+  animation: Bright 0.25s forwards ease-in;
+}
+@keyframes Bright {
+  75% {
+    left: 10px;
+    transform: skewX(-10deg);
+  }
+  100% {
+    left: 0;
+    transform: skewX(0);
+    opacity: 100%;
+  }
+}
+.bnr .bnrText p {
+  line-height: 1.3;
+  padding-top: 20px;
+  align-self: start;
+  grid-area: para;
+}
+.bnr .bnrText .contact {
+  max-width: 250px;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  grid-area: icon;
+  right: 0;
+  overflow: hidden;
+  z-index: 1000;
+  justify-self: start;
+  align-self: center;
+}
+@media (min-width: 769px) {
+  .bnr .bnrText .contact {
+    justify-self: center;
+  }
+}
+.bnr .bnrText .contact .icon {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  left: 1000px;
+  background-color: rgba(243, 243, 243, 0.5);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  z-index: 101;
+  transition: background 0.25s ease-in-out;
+}
+.bnr .bnrText .contact .icon:hover {
+  background-color: #fdc720;
+}
+.bnr .bnrText .contact .icon:focus {
+  background-color: #fdc720;
+}
+.bnr .bnrText .contact .icon img {
+  display: relative;
+  width: 30px;
+}
+.bnr #memojiBox {
+  grid-area: me;
+  position: relative;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
+}
+@media (min-width: 769px) {
+  .bnr #memojiBox {
+    margin-right: 5vw;
+  }
+}
+.bnr #memojiBox:hover .container .memojiBg {
+  background-color: #fdc720;
+}
+.bnr #memojiBox .container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  right: 0;
+  left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bnr #memojiBox .container .memojiBg {
+  position: absolute;
+  height: 450px;
+  width: 450px;
+  border-radius: 100%;
+  background-color: #090909;
+  opacity: 0.15;
+  bottom: 0;
+  transition: background 0.5s ease-in-out;
+}
+.bnr #memojiBox .container .memoji {
+  position: relative;
+  top: 30px;
+  left: -10px;
+  z-index: 100;
+}
+.bnr .arrwTrig {
+  align-self: start;
+  margin-top: 50px;
+  opacity: 0;
+}
+@media (min-width: 550px) {
+  .bnr .arrwTrig {
+    align-self: center;
+  }
+}
+@media (min-width: 768px) {
+  .bnr .arrwTrig {
+    justify-self: center;
+  }
+}
+
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+    Mixins
+============================ */
+/*=============================
+  Project Section
+  ============================ */
+.proj {
+  z-index: 101;
+  grid-template-areas: ". . . . . ." "proj1 proj1 proj1 proj1 . arrowU" "arrow . proj2 proj2 proj2 proj2" "proj3 proj3 proj3 proj3 . ." ". . . . . .";
+}
+.proj :first-child,
+.proj :nth-child(3) {
+  left: -300px;
+}
+.proj :first-child p,
+.proj :nth-child(3) p {
+  left: 15px;
+}
+.proj :nth-child(2) {
+  right: -300px;
+}
+.proj :nth-child(2) p {
+  text-align: right;
+  right: 15px;
+}
+.proj #proj1 {
+  grid-area: proj1;
+}
+.proj #proj1 .bgChange {
+  background: url("../img/sunrain.png");
+  transition: opacity 0.5s ease-in-out;
+}
+.proj #proj1:hover {
+  color: #090909;
+}
+.proj #proj1:hover .bgChange {
+  opacity: 100%;
+}
+.proj #proj1:hover div {
+  background-color: rgba(243, 243, 243, 0.5);
+}
+.proj #proj2 {
+  grid-area: proj2;
+  margin: 10px 0;
+}
+.proj #proj2:hover {
+  background-color: #f3f3f3;
+}
+.proj #proj3 {
+  grid-area: proj3;
+}
+.proj #proj3:hover {
+  background-color: #f3f3f3;
+}
+.proj .projCont {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background: #fdc720;
+  height: 25vh;
+  overflow: hidden;
+  opacity: 0;
+  width: 40vw;
+  max-width: 500px;
+  transition: background 0.5s ease-in-out;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.proj .projCont div {
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background 0.5s ease-in-out;
+}
+.proj .projCont .head {
+  font-weight: 700;
+  text-align: center;
+}
+.proj .projCont .bgChange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  opacity: 0;
+  z-index: -1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.proj .arrwTrig {
+  align-self: center;
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .proj .arrwTrig {
+    justify-self: center;
+  }
+}
+@media (min-width: 768px) {
+  .proj .arrwTrig.up {
+    justify-self: center;
+  }
+}
+.proj .projCont.projInLeft {
+  animation: projInLeft 0.75s linear forwards;
+}
+@keyframes projInLeft {
+  100% {
+    left: 0;
+    opacity: 100%;
+  }
+}
+.proj .projCont.projInRight {
+  animation: projInRight 0.75s linear forwards;
+}
+@keyframes projInRight {
+  100% {
+    right: 0;
+    opacity: 100%;
+  }
+}
+
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+  About Section
+  ============================ */
+.tw .section.about {
+  grid-template-rows: 20px repeat(4, 1fr) 20px;
+  grid-template-areas: "head head head head head ." "head head head head head arrowU" "img img img img img img" "contact contact contact contact contact contact" " bio bio bio bio bio bio" "bio bio bio bio bio bio";
+  height: 110vh;
+  margin-bottom: 25px !important;
+  padding: 5px;
+}
+@media (min-width: 301px) {
+  .tw .section.about {
+    height: 100vh;
+    padding: 15px 20px;
+  }
+}
+@media (min-width: 768px) {
+  .tw .section.about {
+    grid-template-areas: ". head head head head ." ". head head head head arrowU" "img img img img img img" "contact contact contact contact contact contact" " bio bio bio bio bio bio" "bio bio bio bio bio bio";
+  }
+  .tw .section.about .heading {
+    justify-self: center;
+  }
+}
+.tw .section.about .arrwTrig.up {
+  align-self: center;
+  justify-self: end;
+}
+@media (min-width: 768px) {
+  .tw .section.about .arrwTrig.up {
+    justify-self: center;
+  }
+}
+.tw .section.about .headshot {
+  grid-area: img;
+  background-color: black;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 250px;
+  height: 250px;
+  justify-self: center;
+}
+@media (min-width: 768px) {
+  .tw .section.about .headshot {
+    width: 300px;
+    height: 300px;
+  }
+}
+.tw .section.about .headshot img {
+  width: 100%;
+}
+.tw .section.about .heading {
+  grid-area: head;
+  align-self: center;
+}
+.tw .section.about .heading .head {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tw .section.about .heading .head strong {
+  display: inline;
+}
+.tw .section.about .heading .head .name {
+  z-index: 1;
+}
+.tw .section.about .heading .head .name::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background-color: #fdc720;
+}
+.tw .section.about .bio {
+  grid-area: bio;
+  background-color: #fdc720;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 15px;
+  width: fit-content;
+  max-width: 600px;
+  height: fit-content;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-self: start;
+  justify-self: center;
+}
+.tw .section.about .bio p {
+  text-align: justify;
+  line-height: 1.3;
+}
+.tw .section.about .contact {
+  grid-area: contact;
+  max-width: 250px;
+  height: 60px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+.tw .section.about .contact .icon {
+  align-self: center;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(243, 243, 243, 0.5);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  z-index: 101;
+  transition: background 0.25s ease-in-out;
+}
+.tw .section.about .contact .icon:hover {
+  background-color: #fdc720;
+}
+.tw .section.about .contact .icon:focus {
+  background-color: #fdc720;
+}
+.tw .section.about .contact .icon img {
+  display: relative;
+  width: 30px;
+}
+
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+  Global
+  ============================ */
+.lightBox {
+  background-color: #090909;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lightBox h3 {
+  color: #f3f3f3;
+  margin-bottom: 50px;
+  opacity: 0;
+  position: relative;
+  bottom: -20px;
+  animation: textUp 1s 0.75s ease-in-out forwards;
+}
+.lightBox h3 em {
+  animation: textYellow 0.75s 2s linear forwards;
+}
+@keyframes textUp {
+  50% {
+    opacity: 40%;
+  }
+  100% {
+    opacity: 100%;
+    bottom: 0;
+  }
+}
+@keyframes textYellow {
+  90% {
+    font-size: 1em;
+    color: #f3f3f3;
+    font-style: oblique;
+    text-transform: unset;
+  }
+  95% {
+    font-size: 4em;
+    color: #fdc720;
+    text-transform: uppercase;
+  }
+  100% {
+    font-size: 1.5em;
+    color: #fdc720;
+    text-transform: uppercase;
+  }
+}
+.lightBox .switch {
+  width: 175px;
+}
+.lightBox .switch .switchBg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.lightBox .switch input[type=range] {
+  background-color: transparent;
+  -webkit-appearance: none;
+  width: 50%;
+}
+.lightBox .switch input[type=range]:focus {
+  outline: none;
+}
+.lightBox .switch input[type=range]::-webkit-slider-runnable-track {
+  width: 50%;
+  height: 3rem;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background: #f3f3f3;
+  border-radius: 25px;
+  border: none;
+}
+.lightBox .switch input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 100%;
+  height: 2.75rem;
+  width: 2.75rem;
+  margin-top: 2px;
+  background: #494c3b;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.lightBox .switch input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #f3f3f3;
+}
+.lightBox .switch input[type=range]::-moz-range-track {
+  width: 50%;
+  height: 3rem;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #f3f3f3;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+.lightBox .switch input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 2.75rem;
+  width: 2.75rem;
+  margin-top: 2px;
+  background: #494c3b;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.lightBox .switch input[type=range]::-ms-track {
+  width: 50%;
+  height: 3rem;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #f3f3f3;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+.lightBox .switch input[type=range]::-ms-fill-lower {
+  background: #f3f3f3;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+.lightBox .switch input[type=range]::-ms-fill-upper {
+  background: #f3f3f3;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+.lightBox .switch input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 2.75rem;
+  width: 2.75rem;
+  margin-top: 2px;
+  background: #494c3b;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.lightBox .switch input[type=range]:focus::-ms-fill-lower {
+  background: #f3f3f3;
+}
+.lightBox .switch input[type=range]:focus::-ms-fill-upper {
+  background: #f3f3f3;
+}
+.lightBox .switch img {
+  position: absolute;
+  height: 40px;
+  width: auto;
+  left: 50%;
+  top: 5px;
+}
+
+/*=============================
+Variables
+============================ */
+/*- View Width -*/
+/*- Colors -*/
+/*- Font-Size -*/
+/*=============================
+  Lightbox Animation
+  ============================ */
+#modal {
+  background-color: rgba(9, 9, 9, 0.5);
+  display: none;
+}
+#modal .modalCard {
+  position: relative;
+  overflow: hidden;
+  width: 90vw;
+  max-width: 550px;
+  height: 550px;
+  border-radius: 15px;
+}
+#modal .modalCard #modalBtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
+  height: 33px;
+  width: 33px;
+  z-index: 100;
+  padding: 0;
+  background: rgba(9, 9, 9, 0.5);
+  border-radius: 50px;
+}
+#modal .modalCard #modalBtn:hover {
+  background: rgba(243, 243, 243, 0.5);
+  transition: background 0.5s ease-in-out;
+}
+#modal .modalCard #modalBtn:hover svg {
+  fill: #090909;
+  transition: all 0.5s ease-in-out;
+}
+#modal .modalCard .modalImage {
+  background: url("../img/sunrain.png");
+  height: 275px;
+}
+#modal .modalCard .modalContent {
+  padding: 0 20px;
+  background-color: #f3f3f3;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#modal .modalCard .modalContent .head {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+#modal .modalCard .modalContent #modalDesc {
+  line-height: 1.3;
+}
+#modal .modalCard .modalContent .modalLink {
+  display: flex;
+  justify-content: space-around;
+}
+#modal .modalCard .modalContent .modalLink .btn {
+  box-sizing: border-box;
+  background-color: #fdc720;
+  font-weight: 600;
+  width: 40%;
+  padding: 20px 10px;
+  color: #090909;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+#modal .modalCard .modalContent .modalLink .btn:hover {
+  color: #f3f3f3;
+  background-color: #d8a91d;
+}
+
+/*=============================
+  Global
+  ============================ */
+.body {
+  background-color: #f3f3f3;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+}
+.body .main {
+  margin-bottom: 100px !important;
+}
+@media (min-width: 301px) {
+  .body .main {
+    margin-bottom: 75px !important;
+  }
+}
+.body .loadingBox {
+  background-color: #f3f3f3;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.body .loadingBox p {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.body .loadingBox .loading {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #494c3b;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  z-index: 100;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tw {
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  max-width: 1600px;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+.tw .section {
+  box-sizing: border-box;
+  display: grid;
+  gap: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  position: relative;
+  min-height: 100vh;
+  min-height: 660px;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 20px repeat(3, 1fr) 20px;
+  max-height: 1080px;
+}
+
+.arrwTrig {
+  grid-area: arrow;
+  z-index: 100;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  width: 50px;
+  height: 100px;
+  animation: Bounce 1s infinite ease-in-out;
+}
+@keyframes Bounce {
+  0% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: -5px;
+  }
+  100% {
+    bottom: 5px;
+  }
+}
+.arrwTrig .arrow {
+  position: relative;
+  align-self: center;
+  left: 50%;
+  background-color: #494c3b;
+  height: 60px;
+  width: 8px;
+}
+.arrwTrig .arrow::before, .arrwTrig .arrow::after {
+  position: absolute;
+  content: "";
+  height: 50%;
+  width: 8px;
+  background-color: #494c3b;
+  bottom: -10px;
+}
+.arrwTrig .arrow::before {
+  transform: rotate(135deg);
+  left: -8px;
+}
+.arrwTrig .arrow::after {
+  transform: rotate(-135deg);
+  right: -8px;
+}
+
+.arrwTrig.up {
+  grid-area: arrowU;
+  align-self: center;
+  justify-self: end;
+  transform: rotate(180deg);
+}
+
+button.btn {
+  border: none;
+  background-color: transparent;
+}
+
+.footer {
+  height: 30px;
+  padding: 5px;
+}
+.footer .copy {
+  text-align: center !important;
+}
+
+.body.unsupported {
+  text-align: center;
+  margin: 25px 0;
+}
+.body.unsupported h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.body.unsupported p {
+  background-color: #fdc720;
+  padding: 20px 25vw;
+  margin-bottom: 50px;
+}
+.body.unsupported div .btn {
+  box-sizing: border-box;
+  background-color: #fdc720;
+  font-weight: 600;
+  width: 60px;
+  padding: 20px 10px;
+  color: #090909;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+
+/*# sourceMappingURL=global.css.map */

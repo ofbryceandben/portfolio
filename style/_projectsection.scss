@@ -1,0 +1,124 @@
+@use '_variables' as v;
+@import '_mixins.scss';
+
+/*=============================
+  Project Section
+  ============================ */
+
+.proj {
+    z-index: 101;
+    grid-template-areas: '. . . . . .' 'proj1 proj1 proj1 proj1 . arrowU' 'arrow . proj2 proj2 proj2 proj2' 'proj3 proj3 proj3 proj3 . .' '. . . . . .';
+     :first-child,
+     :nth-child(3) {
+        left: -300px;
+        p {
+            left: 15px;
+        }
+    }
+     :nth-child(2) {
+        right: -300px;
+        p {
+            text-align: right;
+            right: 15px;
+        }
+    }
+    #proj1 {
+        grid-area: proj1;
+        .bgChange {
+            background: url('../img/sunrain.png');
+            transition: opacity 0.5s ease-in-out;
+        }
+        &:hover {
+            .bgChange {
+                opacity: 100%;
+            }
+            color: v.$black;
+            div {
+                background-color: v.$white-t;
+            }
+        }
+    }
+    #proj2 {
+        grid-area: proj2;
+        margin: 10px 0;
+        &:hover {
+            background-color: v.$white;
+        }
+    }
+    #proj3 {
+        grid-area: proj3;
+        &:hover {
+            background-color: v.$white;
+        }
+    }
+    .projCont {
+        box-sizing: border-box;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        justify-self: center;
+        padding: 10px 20px;
+        border-radius: 15px;
+        background: v.$yellow;
+        height: 25vh;
+        overflow: hidden;
+        opacity: 0;
+        width: 40vw;
+        max-width: 500px;
+        @include bgTransition;
+        @include boxShadow;
+        div {
+            width: 90%;
+            padding: 5px;
+            border-radius: 5px;
+            @include bgTransition;
+        }
+        .head {
+            font-weight: 700;
+            text-align: center;
+        }
+        .bgChange {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110%;
+            height: 110%;
+            opacity: 0;
+            z-index: -1;
+            @include boxShadow;
+        }
+    }
+    .arrwTrig {
+        align-self: center;
+        opacity: 0;
+        @include media(">=tablet") {
+            justify-self: center;
+        }
+    }
+    .arrwTrig.up {
+        @include media(">=tablet") {
+            justify-self: center;
+        }
+    }
+    .projCont.projInLeft {
+        animation: projInLeft .75s linear forwards;
+    }
+    @keyframes projInLeft {
+        100% {
+            left: 0;
+            opacity: 100%;
+        }
+    }
+    .projCont.projInRight {
+        animation: projInRight .75s linear forwards;
+    }
+    @keyframes projInRight {
+        100% {
+            right: 0;
+            opacity: 100%;
+        }
+    }
+}

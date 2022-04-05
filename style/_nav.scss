@@ -1,0 +1,92 @@
+ @use '_variables'as v;
+ /*=============================
+  Header/Nav
+  ============================ */
+
+ .header {
+     height          : 50px;
+     display         : flex;
+     padding         : 5px 10px;
+     justify-content : space-between;
+     background-color: v.$green;
+     position        : relative;
+
+     .logo {
+         height           : 100px;
+         width            : 100px;
+         position         : relative;
+         top              : -50px;
+         left             : 3vw;
+         background-image : url(../img/logo/logo.svg);
+         background-repeat: no-repeat;
+     }
+
+     .gnTrig {
+         height         : 100%;
+         width          : 50px;
+         display        : flex;
+         justify-content: flex-end;
+         position       : relative;
+         right          : 2vw;
+
+         .burger {
+             position        : relative;
+             height          : 5px;
+             width           : 100%;
+             background-color: v.$black;
+             align-self      : center;
+             justify-content : end;
+
+             &::after,
+             &::before {
+                 content         : '';
+                 position        : absolute;
+                 background-color: v.$black;
+                 height          : 5px;
+                 width           : 125%;
+                 right           : 0;
+             }
+
+             &::before {
+                 top: 15px;
+             }
+
+             &::after {
+                 bottom: 15px;
+             }
+         }
+     }
+
+     nav {
+         flex-basis: 90%;
+
+         ul {
+             position       : relative;
+             padding-right  : 1vw;
+             bottom         : 0;
+             height         : 100%;
+             display        : flex;
+             justify-content: flex-end;
+             align-items    : flex-end;
+             color          : v.$white;
+             font-weight    : 700;
+
+             :nth-child(2),
+             :nth-child(3) {
+                 margin-left: 20px;
+             }
+
+             li {
+
+                 a {
+                     padding   : 10px 0;
+                     text-align: center;
+                 }
+             }
+
+             @include media(">=tablet") {
+                 padding-right: 4vw;
+             }
+         }
+     }
+ }

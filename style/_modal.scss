@@ -1,0 +1,79 @@
+@use '_variables' as v;
+
+/*=============================
+  Lightbox Animation
+  ============================ */
+
+#modal {
+    background-color: v.$black-t;
+    display: none;
+    .modalCard {
+        position: relative;
+        overflow: hidden;
+        width: 90vw;
+        max-width: 550px;
+        height: 550px;
+        border-radius: 15px;
+        #modalBtn {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 20px;
+            right: 20px;
+            height: 33px;
+            width: 33px;
+            z-index: 100;
+            padding: 0;
+            background: v.$black-t;
+            border-radius: 50px;
+            &:hover {
+                background: v.$white-t;
+                @include bgTransition;
+                svg {
+                    fill: v.$black;
+                    @include allTransition;
+                }
+            }
+        }
+        .modalImage {
+            background: url('../img/sunrain.png');
+            height: 275px;
+        }
+        .modalContent {
+            padding: 0 20px;
+            background-color: v.$white;
+            height: 275px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .head {
+                font-weight: 700;
+                font-size: clamp(1.5rem, 5vw, 2.5rem);
+            }
+            #modalDesc {
+                line-height: 1.3;
+            }
+            .modalLink {
+                display: flex;
+                justify-content: space-around;
+                .btn {
+                    box-sizing: border-box;
+                    background-color: v.$yellow;
+                    font-weight: 600;
+                    width: 40%;
+                    padding: 20px 10px;
+                    color: v.$black;
+                    border-radius: 10px;
+                    @include boxShadow;
+                    @include allTransition;
+                    text-align: center;
+                    &:hover {
+                        color: v.$white;
+                        background-color: v.$yellow-h;
+                    }
+                }
+            }
+        }
+    }
+}

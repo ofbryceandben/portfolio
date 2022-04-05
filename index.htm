@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function is_browser() {
+            return (
+                navigator.userAgent.indexOf("Opera") !== -1 ||
+                navigator.userAgent.indexOf("OPR") !== -1 ||
+                navigator.userAgent.indexOf("MSIE") !== -1 || // IE10 and below
+                navigator.userAgent.indexOf("Trident") !== -1 || // IE11
+                navigator.userAgent.indexOf("Edge") !== -1 ||
+                navigator.userAgent.indexOf("Edg") !== -1 ||
+                navigator.userAgent.indexOf("Chrome") !== -1 ||
+                navigator.userAgent.indexOf("GSA") !== -1 || // Google Search App iOS
+                navigator.userAgent.indexOf("Firefox") !== -1 ||
+                navigator.userAgent.indexOf("FxiOS") !== -1 || // Firefox iOS, includes Focus
+                navigator.userAgent.indexOf("Safari") !== -1
+            );
+        }
+        function is_old() {
+            var ua = navigator.userAgent;
+            var version = "";
+            // Helper functions to deal with common regex
+            function getFirstMatch(regex) {
+                var match = ua.match(regex);
+                return (match && match.length > 1 && match[1]) || "";
+            }
+            // Detect
+            // Opera
+            if (/opera|opr/i.test(ua)) {
+                version = getFirstMatch(/(?:opera|opr)[\s\/](\d+(\.\d+)?)/i);
+                return (version < 30);
+            }
+            // IE10 and below
+            if (/msie/i.test(ua)) {
+                version = getFirstMatch(/(?:msie\s)(\d+(\.\d+)?)/i);
+                return (version < 11);
+            }
+            // IE11
+            if (/trident/i.test(ua)) {
+                version = getFirstMatch(/(?:trident)\/(\d+(\.\d+)?)/i);
+                return (version < 8);
+            }
+            // Chrome
+            if (/chrome|crios|crmo/i.test(ua)) {
+                version = getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.\d+)?)/i);
+                return (version < 36);
+            }
+            // Google Search App iOS
+            if (/gsa/i.test(ua)) {
+                version = getFirstMatch(/(?:gsa)\/(\d+(\.\d+)?)/i);
+                return (version < 65);
+            }
+            // Firefox
+            if (/firefox/i.test(ua)) {
+                version = getFirstMatch(/(?:firefox)\/(\d+(\.\d+)?)/i);
+                return (version < 46);
+            }
+            // Firefox iOS, includes Focus
+            if (/fxios/i.test(ua)) {
+                version = getFirstMatch(/(?:fxios)\/(\d+(\.\d+)?)/i);
+                return (version < 7);
+            }
+            // Safari
+            if (/safari/i.test(ua)) {
+                version = getFirstMatch(/version\/(\d+(\.\d+)?)/i);
+                return (version < 9);
+            }
+            return false; // No redirect
+        }
+        function not_excluded_page() {
+            return (
+                window.location.href.indexOf("/unsupported-browser/") === -1 &&
+                document.title.toLowerCase().indexOf("page not found") === -1
+            );
+        }
+        if (is_browser() && is_old() && not_excluded_page()) {
+            window.location = location.protocol + "//" + location.host + "/unsupported.htm";
+        }
+    </script>
+
+    <title>Bryce Maloney Web Specialist Portfolio | BCIT New Media 2022 </title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKBXJ0H00V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-215650767-1');
+    </script>
+
+    <!-- Meta Tags -->
+    <meta name="description"
+        content="Bryce Maloney is a Web Specialist based in Vancouver BC. His focus is Web Development as well as User Experience  User Interface design. | BCIT New Media Program Graduate 2022.">
+
+    <meta name="og:title" content="Bryce Maloney Web Specialist | BCIT New Media 2022">
+    <meta name="og:site_name" content="Bryce Maloney Web Specialist Portfolio">
+
+    <meta name="og:description"
+        content="Bryce Maloney is a Web Specialist based in Vancouver BC. His focus is Web Development as well as User Experience  User Interface design. | BCIT New Media Program Graduate 2022.">
+
+    <meta name="og:url" content="https://brycemaloney.ca">
+    <meta name="og:image" content="img/bryce-maloney.jpg">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="style/reset.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style/global.css">
+</head>
+
+<body class="body">
+    <!-- Nav -->
+    <header id="top" class="header">
+        <div class="logo"></div>
+        <nav class="navLis">
+            <ul>
+                <li>
+                    <a href="#proj" title="Check out my recent projects!">
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="#abt" title="Learn more about Bryce.">
+                        About Me
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/ofbryceandben" target="_blank" title="Link to Bryce's GitHub page.">
+                        Git Hub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Theme Wrapper -->
+    <div class="tw">
+        <!-- Main Start -->
+        <main class="main">
+            <!-- Banner Section -->
+            <section id="bnr" class="section bnr">
+                <div class="bnrText">
+                    <h1 class="head">Bring your<br> <em>bright</em><br> <strong><span class="name">ideas to
+                                me!</span></strong></h1>
+                    <p><strong>//</strong> Hi, I'm <strong>Bryce Maloney</strong>. I'm a <strong> Web
+                            Specialist</strong>, who wants to help you with your projects. Click on the arrow to see my
+                        <strong>projects below!</strong>
+                    </p>
+                    <!-- Contact Buttons -->
+                    <div class="contact">
+                        <a id="i1" class="icon link " href="mailto:contact@brycemaloney.ca"
+                            title="E-Mail Bryce Maloney"><img src="img/social/mail.svg" alt="Mail Logo"></a>
+                        <a id="i2" class="icon link " href="https://www.instagram.com/ofbryceandben"
+                            title="Check-Out Bryce Maloney's Instagram" target="_blank"><img src="img/social/ig.svg"
+                                alt="Instagram Logo"></a>
+                        <a id="i3" class="icon link " href="https://www.linkedin.com/in/bryce-maloney-web-specialist"
+                            title="Look at Bryce Maloney's LinkedIn" target="_blank"><img src="img/social/li.svg"
+                                alt="Linked In Logo"></a>
+                    </div>
+                </div>
+                <!-- Memoji -->
+                <div id="memojiBox">
+                    <div class="container">
+                        <div class="memojiBg"></div>
+                        <img class="memoji" src="img/memoji/b-smile.png" alt="Bryce Maloney's Memoji with smile.">
+                        <img class="memoji" style="display:none" src="img/memoji/b-bulb.png"
+                            alt="Bryce Maloney's Memoji with light bulb.">
+                    </div>
+                </div>
+
+                <!-- Next Section Arrow -->
+                <a href="#proj" id="bnrArrw" class="arrwTrig" title="Go To Projects">
+                    <div class="arrow"></div>
+                </a>
+            </section>
+            <!-- Projects Section -->
+            <section id="proj" class="section proj">
+                <!-- Project 1 -->
+                <div id="proj1" class="projCont" data-proj="1"
+                    title="Weather Application created by Bryce Maloney using jQuery and OpenWeather API.">
+                    <div class="bgChange"></div>
+                    <div>
+                        <h2 class="head">Weather App</h2>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div id="proj2" class="projCont" data-proj="2" title="Project coming soon!">
+                    <div class="bgChange"></div>
+                    <div>
+                        <h2 class="head">Coming Soon!</h2>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div id="proj3" class="projCont" data-proj="3" title="Project coming soon!">
+                    <div class="bgChange"></div>
+                    <div>
+                        <h2 class="head">Coming Soon!</h2>
+                    </div>
+                </div>
+
+                <a href="#abt" id="projArrw" class="arrwTrig" title="Go To About Bryce Maloney">
+                    <div class="arrow"></div>
+                </a>
+                <a href="#top" class="arrwTrig up" title="Go To Top Of Page">
+                    <div class="arrow"></div>
+                </a>
+            </section>
+            <!-- About Section -->
+            <section id="abt" class="section about">
+                <div class="headshot">
+                    <img src="/img/bryce-maloney.png" alt="Headshot of Bryce Maloney">
+                </div>
+                <div class="heading">
+
+                    <h2 class="head"> <span> <strong>//</strong> A bit more about&nbsp;</span> <strong
+                            class="name">Bryce.</strong></h2>
+                </div>
+                <div class="bio">
+                    <p>If you’re looking for a dedicated, outgoing, and personable Web Specialist, look no further! Hi
+                        I’m <strong> Bryce Maloney</strong>, from Vancouver BC. I have a background in Hospitality
+                        Management and am a graduate from <strong>BCIT</strong> with
+                        a diploma in <strong>New Media Design & Web Development</strong>.
+                    </p>
+                </div>
+                <div class="contact">
+                    <a class="icon link " href="mailto:contact@brycemaloney.ca" title="E-Mail Bryce Maloney"><img
+                            src="img/social/mail.svg" alt="Mail Logo"></a>
+                    <a class="icon link " href="https://www.instagram.com/ofbryceandben"
+                        title="Check-Out Bryce Maloney's Instagram" target="_blank"><img src="img/social/ig.svg"
+                            alt="Instagram Logo"></a>
+                    <a class="icon link " href="https://www.linkedin.com/in/bryce-maloney-web-specialist"
+                        title="Look at Bryce Maloney's LinkedIn" target="_blank"><img src="img/social/li.svg"
+                            alt="Linked In Logo"></a>
+                </div>
+                <a href="#proj" id="abtArrw" class="arrwTrig up" title="Go To Projects">
+                    <div class="arrow"></div>
+                </a>
+            </section>
+        </main>
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p class="copy"> Bryce Maloney | &copy; <span id="date"></span></p>
+        </footer>
+    </div>
+    <!-- Modal -->
+    <div id="modal" class="lightBox">
+        <div class="modalCard">
+            <button id="modalBtn" class="btn"><svg fill="white" viewBox="0 0 1024 1024" height="2em" width="2em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+                    </path>
+                </svg></button>
+            <div class="modalImage">
+
+            </div>
+            <div class="modalContent">
+                <h2 class="head" id="modalHeader">Web Development Project by Bryce Maloney</h2>
+                <p id="modalDesc"></p>
+                <div class="modalLink">
+                    <a href="" class="btn" id="liveSite" target="_blank">Live Site</a><a href="" class="btn" id="gitHub"
+                        target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Lightbox -->
+    <div id="lightBox" class="lightBox">
+        <div style="overflow:hidden">
+            <h3 id="switchText">Time to <em>light</em> this up!</h3>
+        </div>
+        <div class="switch">
+            <div class="switchBg">
+                <input type="range" id="toggle" class="toggle" value="2" min="1" max="100" step="1">
+                <img id="switchBulb" src="img/bulb.svg" alt="lightbulb">
+            </div>
+        </div>
+        <div class="lightBoxText">
+
+        </div>
+    </div>
+    <!-- Loading -->
+    <div id="loading" class="loadingBox">
+        <div class="loading"></div>
+        <p>Loading...</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script/scroll-lock.js"></script>
+    <script src="script/main.js"></script>
+</body>
+
+</html>
