@@ -41,8 +41,18 @@
     #proj2 {
         grid-area: proj2;
         margin: 10px 0;
+        .bgChange {
+            background: url('../img/chefwhites.png');
+            transition: opacity 0.5s ease-in-out;
+        }
         &:hover {
-            background-color: v.$white;
+            .bgChange {
+                opacity: 100%;
+            }
+            color: v.$black;
+            div {
+                background-color: v.$white-t;
+            }
         }
     }
     #proj3 {
@@ -79,6 +89,7 @@
         .head {
             font-weight: 700;
             text-align: center;
+            font-size: clamp(1.5rem, 5vw, 2rem);
         }
         .bgChange {
             position: absolute;

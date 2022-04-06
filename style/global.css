@@ -396,8 +396,18 @@ Variables
   grid-area: proj2;
   margin: 10px 0;
 }
+.proj #proj2 .bgChange {
+  background: url("../img/chefwhites.png");
+  transition: opacity 0.5s ease-in-out;
+}
 .proj #proj2:hover {
-  background-color: #f3f3f3;
+  color: #090909;
+}
+.proj #proj2:hover .bgChange {
+  opacity: 100%;
+}
+.proj #proj2:hover div {
+  background-color: rgba(243, 243, 243, 0.5);
 }
 .proj #proj3 {
   grid-area: proj3;
@@ -434,6 +444,7 @@ Variables
 .proj .projCont .head {
   font-weight: 700;
   text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 .proj .projCont .bgChange {
   position: absolute;
@@ -1021,5 +1032,3 @@ button.btn {
   transition: all 0.5s ease-in-out;
   text-align: center;
 }
-
-/*# sourceMappingURL=global.css.map */

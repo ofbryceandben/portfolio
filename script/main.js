@@ -231,9 +231,13 @@ $(document).ready(function () {
                     $('.modalImage').css({
                         background: 'url(img/sunrain.png)',
                     });
+                    $('#gitHub').css({
+                        display: 'block',
+
+                    });
                     // Change the text in element "modalDesc" to the following
                     $('#modalDesc').html(
-                        '<strong>//</strong> Come explore my sassy Weather Application I created. This application uses jQuery and OpenWeather API to create a fun experience while the user explores the weather in different cities.'
+                        '<strong>//</strong> Come explore my sassy Weather Application I created. <strong>This application uses jQuery and OpenWeather API</strong> to create a fun experience while the user explores the weather in different cities.'
                     );
                     //Change the text in element "modalHeader" to the following
                     $('#modalHeader').text(
@@ -250,17 +254,20 @@ $(document).ready(function () {
                 //if "data-proj" is strictly equal to 2
                 case ($(this).data('proj') === 2):
                     $('.modalImage').css({
-                        background: 'white',
+                        background: 'url(img/chefwhites.png)',
 
                     });
                     $('#modalDesc').html(
-                        '<strong>//</strong> Sorry!! I haven\'t quite got this beautiful new project up and running yet. But just you wait! It\'s going to be AMAZING!'
+                        '<strong>//</strong> Check out my demo-site of Chef Whites. Chef Whites is a Charity Apparel company that focuses on the Restaurant Industry Workers. <strong>This site was made using WordPress & the Woostify Theme.</strong>'
                     );
                     $('#modalHeader').text(
-                        'Coming Soon!'
+                        'Chef Whites'
                     );
-                    $('#liveSite').attr('href', '').attr('title', 'Not quite ready yet!');
-                    $('#gitHub').attr('href', '').attr('title', 'Not quite ready yet!');
+                    $('#liveSite').attr('href', 'https://chefwhites.brycemaloney.ca').attr('title', 'Chef Whites Landing Page');
+                    $('#gitHub').css({
+                        display: 'none',
+
+                    });
 
                     break;
 
@@ -268,6 +275,10 @@ $(document).ready(function () {
                 case ($(this).data('proj') === 3):
                     $('.modalImage').css({
                         backgroundColor: '#white'
+                    });
+                    $('#gitHub').css({
+                        display: 'block',
+
                     });
                     $('#modalDesc').html(
                         '<strong>//</strong> Sorry!! I haven\'t quite got this beautiful new project up and running yet. But just you wait! It\'s going to be AMAZING!'
