@@ -274,20 +274,20 @@ $(document).ready(function () {
                 //if "data-proj" is strictly equal to 3
                 case ($(this).data('proj') === 3):
                     $('.modalImage').css({
-                        backgroundColor: '#white'
+                        background: 'url(img/mules-bg.png)',
                     });
                     $('#gitHub').css({
                         display: 'block',
 
                     });
                     $('#modalDesc').html(
-                        '<strong>//</strong> Sorry!! I haven\'t quite got this beautiful new project up and running yet. But just you wait! It\'s going to be AMAZING!'
+                        '<strong>//</strong> Metro Vancouver\'s next Grocery App! Meals on Mules was created with our Designers <a href="https://www.linkedin.com/in/eleanorhanna-newmediadesign-bcit/" target="_blank" title="Link to Eleanor Hanna\'s LinkedIn Page">Eleanor</a>, <a href="https://www.linkedin.com/in/nicolemaasmediaandwebdesign/" target="_blank" title="Link to Nicole Cassandra\'s LinkedIn Page">Nicole</a> & <a href="https://www.linkedin.com/in/kelleemilne-bcit-newmedia-uiux-digitalmarketing/" target="_blank" title="Link to Kellee Milne\'s LinkedIn Page">Kellee</a>, and our Back-End Developer <a href="https://www.linkedin.com/in/megankrenbrink-developer/" target="_blank" title="Link to Megan Krenbrink\'s LinkedIn Page">Megan</a>.'
                     );
                     $('#modalHeader').text(
-                        'Coming Soon!'
+                        'Meals on Mules'
                     );
-                    $('#liveSite').attr('href', '').attr('title', 'Not quite ready yet!');
-                    $('#gitHub').attr('href', '').attr('title', 'Not quite ready yet!');
+                    $('#liveSite').attr('href', 'https://brycemaloney.ca/meals-on-mules.mp4').attr('title', 'Link to App Recording');
+                    $('#gitHub').attr('href', 'https://github.com/ofbryceandben/meals-on-mules-app').attr('title', 'Link to GitHub Repository');
 
                     break;
             }

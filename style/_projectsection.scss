@@ -57,8 +57,18 @@
     }
     #proj3 {
         grid-area: proj3;
+        .bgChange {
+            background: url('../img/mules-bg.png');
+            transition: opacity 0.5s ease-in-out;
+        }
         &:hover {
-            background-color: v.$white;
+            .bgChange {
+                opacity: 100%;
+            }
+            color: v.$black;
+            div {
+                background-color: v.$white-t;
+            }
         }
     }
     .projCont {

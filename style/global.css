@@ -412,8 +412,18 @@ Variables
 .proj #proj3 {
   grid-area: proj3;
 }
+.proj #proj3 .bgChange {
+  background: url("../img/mules-bg.png");
+  transition: opacity 0.5s ease-in-out;
+}
 .proj #proj3:hover {
-  background-color: #f3f3f3;
+  color: #090909;
+}
+.proj #proj3:hover .bgChange {
+  opacity: 100%;
+}
+.proj #proj3:hover div {
+  background-color: rgba(243, 243, 243, 0.5);
 }
 .proj .projCont {
   box-sizing: border-box;
@@ -846,6 +856,9 @@ Variables
 }
 #modal .modalCard .modalContent #modalDesc {
   line-height: 1.3;
+}
+#modal .modalCard .modalContent #modalDesc a {
+  font-weight: 700;
 }
 #modal .modalCard .modalContent .modalLink {
   display: flex;

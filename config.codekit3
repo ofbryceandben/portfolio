@@ -221,6 +221,19 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/img\/mules-bg.png" : {
+      "ft" : 32768,
+      "iS" : 3013,
+      "oA" : 0,
+      "oAP" : "\/img\/mules-bg.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/img\/social\/ig.svg" : {
       "ft" : 2097152,
       "miP" : 0,
