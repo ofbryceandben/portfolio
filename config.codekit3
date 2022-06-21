@@ -285,6 +285,17 @@
       "oAP" : "\/index.htm",
       "oF" : 0
     },
+    "\/script\/main-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/script\/main-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/script\/main.js" : {
       "bF" : 0,
       "ft" : 64,
